@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700,900&display=swap');
+
+$primary-color-font: #611829;
+$secondary-color-font: #924551;
+$default-font: #999999;
+$background: #FAFAFA;
+$background-active:#EEEEEE;
+
+%flex-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
