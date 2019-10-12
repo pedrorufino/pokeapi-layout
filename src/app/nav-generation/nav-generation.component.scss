@@ -1,10 +1,11 @@
 @import '../../styles.scss';
+@import './../../reset.css';
 
 .nav {
   width: 951px;
   height: 40px;
   @extend %flex-space;
-  
+
   .nav__gen {
     font-size: 14px;
     font-weight: 500;
@@ -15,10 +16,10 @@
     letter-spacing: 1.4px;
     cursor: pointer;
   }
-}
 
-.nav__gen--highlight {
-  color: $primary-color-font;
-  font-weight: 800;
-  background-color: $default-font;
+  .nav__gen--highlight {
+    color: $primary;
+    font-weight: 800;
+    background-color: $backgroundFocus;
+  }
 }

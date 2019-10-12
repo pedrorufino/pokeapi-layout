@@ -1,10 +1,11 @@
 @import '../../styles.scss';
+@import './../../reset.css';
 
 .list {
   @extend %flex-space;
   height: 30px;
   width: 952px;
-  background-color: $background-active;
+  background-color: $backgroundFocus;
 
   .list__item {
     @extend %flex-center;
@@ -15,11 +16,11 @@
     cursor: pointer;
     font-weight: 500;
   }
-}
 
-.list__item--highlight {
-  color: $primary-color-font;
-  font-weight: 700;
-  border-radius: 0 0 5px 0;
-  background: linear-gradient(180deg, $background-active 0%, $background 100%) 0% 0% no-repeat padding-box;
+  .list__item--highlight {
+    color: $primary;
+    font-weight: 700;
+    border-radius: 0 0 5px 0;
+    background: linear-gradient(180deg, $backgroundFocus 0%, $background 100%) 0% 0% no-repeat padding-box;
+  }
 }

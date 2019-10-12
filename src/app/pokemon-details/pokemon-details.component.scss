@@ -1,0 +1,77 @@
+@import '../../styles.scss';
+@import './../../reset.css';
+
+section.pokemon {
+  @extend %flex-center;
+  align-items: flex-start;
+  padding: 10px;
+  width: 952px;
+  height: 109px;
+
+  .pokemon__media {
+    width: 91px;
+    height: 93px;
+  }
+
+  .pokemon__info {
+    width: 341px;
+    height: 95.75px;
+    @extend %flex-column;
+    
+    h1 {
+      font-weight: 900;
+      color: $primary;
+      font-size: 1.1rem;
+      letter-spacing: 1.8px;
+    }
+
+    h3 {
+      font-style: italic;
+      text-transform: lowercase;
+      color: $primaryLight;
+      font-size: 16px;
+      letter-spacing: 1.6px;
+      font-weight: 500;
+    }
+
+    h4 {
+      font-weight: 500;
+      letter-spacing: 1.6px;
+      font-size: 14px;
+    }
+
+    .pokemon__types {
+      &>h4 {
+        display: inline-block;
+        background-color: $backgroundFocus;
+        font-size: 12px;
+        border-radius: 36px;
+        width: 110px;
+        height: 10px;
+        padding: 10px 0;
+        text-align: center;
+      }
+    }
+  }
+
+  .pokemon__id {
+    width: 37px;
+    font-size: 14px;
+    font-weight: 500;
+
+  }
+
+  .pokemon__description {
+    padding: 10px;
+    width: 443px;
+    height: 70px;
+    overflow-y: scroll;
+    background-color: $backgroundFocus;
+    border-radius: 12px;
+
+    p {
+      letter-spacing: 1.2px;
+      color: $defaultFont;
+    }
+  }
+}
