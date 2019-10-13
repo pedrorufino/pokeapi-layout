@@ -6,6 +6,7 @@ import { NavGenerationComponent } from './nav-generation/nav-generation.componen
 import { NavPokemonComponent } from './nav-pokemon/nav-pokemon.component';
 import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
