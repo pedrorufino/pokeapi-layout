@@ -6,17 +6,17 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HttpService {
 
-  
-  constructor(private http:HttpClient) {
-    
-  }
-  
-  getGeneration(generation){
 
-    let apiUrl = `http:https://pokeapi.co/api/v2/generation/${generation}/`
+  constructor(private http: HttpClient) {
+
+  }
+
+  getGeneration(generation) {
+
+    let apiUrl = `https://pokeapi.co/api/v2/generation/${generation}/`
 
     return this.http.get<any[]>(`${apiUrl}`)
   }
 
-  
+
 }

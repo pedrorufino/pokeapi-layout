@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { NavGenerationComponent } from './nav-generation/nav-generation.component';
 import { NavPokemonComponent } from './nav-pokemon/nav-pokemon.component';
 import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
-
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,8 @@ import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
