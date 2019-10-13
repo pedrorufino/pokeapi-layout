@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/';
+import { HttpService} from './../core/services/http.service';
 
 @Component({
   selector: 'app-nav-generation',
@@ -9,10 +10,12 @@ import { Subscription } from 'rxjs/';
 })
 export class NavGenerationComponent implements OnInit {
 
+  generation: Array<any>
+
   userId: string
   inscricao: Subscription
-
-  constructor(private route: ActivatedRoute) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+  constructor(private route: ActivatedRoute, private httpServece: HttpService) {
 
 
   }
@@ -25,6 +28,10 @@ export class NavGenerationComponent implements OnInit {
         console.log(this.userId);
       }
     )
+  }
+
+  getGeneration(gen){
+    this.httpServece.getGeneration(gen).subscribe(dados => this.generation = dados)
   }
 
   ngOnInit() {

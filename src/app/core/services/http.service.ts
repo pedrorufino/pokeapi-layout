@@ -13,7 +13,7 @@ export class HttpService {
   
   getGeneration(generation){
 
-    let apiUrl:String = `http:https://pokeapi.co/api/v2/generation/${generation}/`
+    let apiUrl = `http:https://pokeapi.co/api/v2/generation/${generation}/`
 
     return this.http.get<any[]>(`${apiUrl}`)
   }
