@@ -18,11 +18,12 @@ export class NavPokemonComponent implements OnInit {
   // criar rota relativa a atual
   // exportar para o componente details
   pokemonDetails(pokemon) {
-
+    console.log(pokemon)
     this.router.navigate([`geracao/${this.gen}/`, pokemon.name], { relativeTo: this.route })
   }
 
   ngOnInit() {
   }
+
 
 }

@@ -12,9 +12,13 @@ export class HttpService {
   }
 
   getGeneration(generation) {
-
     let apiUrl = `https://pokeapi.co/api/v2/generation/${generation}/`
+    return this.http.get<any>(`${apiUrl}`)
+  }
 
+
+  getPokemonData(id){
+    let apiUrl = `https://pokeapi.co/api/v2/pokemon/id/`
     return this.http.get<any>(`${apiUrl}`)
   }
 
