@@ -1,6 +1,5 @@
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs/';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-nav-pokemon',
@@ -8,25 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-pokemon.component.scss']
 })
 export class NavPokemonComponent implements OnInit {
-  public userId: string
-  inscricao: Subscription
+  @Input() pokelist
 
-  constructor(private route: ActivatedRoute) {
+  constructor() {
 
   }
 
   ngOnInit() {
-    // console.log(this.route)
-    // this.inscricao = this.route.params.subscribe(
-    //   (params: any) => {
-    //     this.userId = params['id'];
-    //     console.log(this.userId);
-    //   }
-    // )
-  }
 
-  // ngOnDestroy() {
-  //   this.inscricao.unsubscribe();
-  // }
+  }
 
 }

@@ -15,7 +15,7 @@ export class HttpService {
 
     let apiUrl = `https://pokeapi.co/api/v2/generation/${generation}/`
 
-    return this.http.get<any[]>(`${apiUrl}`)
+    return this.http.get<any>(`${apiUrl}`)
   }
 
 
