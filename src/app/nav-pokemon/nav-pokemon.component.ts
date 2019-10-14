@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -8,13 +8,21 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NavPokemonComponent implements OnInit {
   @Input() pokelist
+  @Input() gen
 
-  constructor() {
+
+  constructor(private router: Router, private route: ActivatedRoute) {
 
   }
 
-  ngOnInit() {
+  // criar rota relativa a atual
+  // exportar para o componente details
+  pokemonDetails(pokemon) {
 
+    this.router.navigate([`geracao/${this.gen}/`, pokemon.name], { relativeTo: this.route })
+  }
+
+  ngOnInit() {
   }
 
 }

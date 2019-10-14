@@ -12,7 +12,7 @@ export class NavGenerationComponent implements OnInit {
 
   public inscricao: Subscription
   public pokemonList
-
+  public gene
   constructor(private route: ActivatedRoute, private httpService: HttpService) { }
 
   ngOnInit() {
@@ -20,6 +20,7 @@ export class NavGenerationComponent implements OnInit {
   }
 
   getGen(gen: number = 1) {
+    this.gene = gen
     this.httpService.getGeneration(gen).subscribe(dados => {
       this.getRandomPokemon(dados.pokemon_species)
     })
