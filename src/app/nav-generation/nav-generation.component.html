@@ -1,5 +1,4 @@
 <nav class="nav">
-  <h2 class="nav__gen" routerLink="/geracao/1" routerLinkActive="nav__gen--highlight">Generation 1</h2>
-  <h2 class="nav__gen" routerLink="/geracao/2" routerLinkActive="nav__gen--highlight">Generation 2</h2>
+  <h2 class="nav__gen" (click)="getGen(1)" routerLink="/geracao/1" routerLinkActive="nav__gen--highlight">Generation 1</h2>
+  <h2 class="nav__gen" (click)="getGen(2)" routerLink="/geracao/2" routerLinkActive="nav__gen--highlight">Generation 2</h2>
 </nav>
-<p> look at {{userId}}</p>

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
+import { HttpService } from './../core/services/http.service';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/';
-import { HttpService } from './../core/services/http.service';
 
 @Component({
   selector: 'app-nav-generation',
@@ -10,37 +10,28 @@ import { HttpService } from './../core/services/http.service';
 })
 export class NavGenerationComponent implements OnInit {
 
-  generation: Array<any>
+  public inscricao: Subscription
+  public pokemonList
 
-  userId: string
-  inscricao: Subscription
+  constructor(private route: ActivatedRoute, private httpService: HttpService) { }
 
-  constructor(private route: ActivatedRoute, private httpServece: HttpService) {
-
-
+  ngOnInit() {
+    this.getGen()
   }
 
-  show() {
-    console.log(this.route)
-    this.inscricao = this.route.params.subscribe(
-      (params: any) => {
-        this.userId = params['id'];
-        console.log(this.userId);
-      }
-    )
+  getGen(gen: number = 1) {
+    this.httpService.getGeneration(gen).subscribe(dados => {
+      this.getRandomPokemon(dados.pokemon_species)
+    })
   }
+  getRandomPokemon(array) {
+    let pokemons = []
+    const randomPosition = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-  getGeneration(gen) {
-    this.httpServece.getGeneration(gen).subscribe(dados => this.generation = dados)
+    for (let i = 0; i < 7; i++) {
+      pokemons[i] = array[randomPosition(1, array.length)];
+    }
+
+    this.pokemonList = pokemons;
   }
-
-  ngOnInit(gen = 1) {
-    this.httpServece.getGeneration(gen).subscribe(dados => this.generation = dados)
-
-  }
-
-  ngOnDestroy() {
-    this.inscricao.unsubscribe();
-  }
-
 }
