@@ -1,9 +1,14 @@
 <nav>
   <ul class="list">
-    <li class="list__item" *ngFor="let pokemon of pokelist" (click)="pokemonDetails(pokemon)"
-      routerLinkActive="list__item--highlight">
-      {{ pokemon.name }}
+    <li class="list__item" 
+        [ngCLass]="{
+          'list__item--highlight': !isActive
+        }"
+        (click)="pokemonDetails(pokemon)"
+        *ngFor="let pokemon of pokelist" 
+        routerLinkActive="list__item--highlight">
 
+      {{ pokemon.name }}
     </li>
   </ul>
 </nav>

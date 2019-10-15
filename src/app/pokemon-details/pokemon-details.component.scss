@@ -7,17 +7,21 @@ section.pokemon {
   padding: 10px;
   width: 952px;
   height: 109px;
+  margin: 0;
 
   .pokemon__media {
     width: 91px;
     height: 93px;
+    margin: 0 15px 0 10px;
+    background-color: $backgroundFocus;
+    border-radius: 50%;
   }
 
   .pokemon__info {
-    width: 341px;
+    width: 300px;
     height: 95.75px;
     @extend %flex-column;
-    
+
     h1 {
       font-weight: 900;
       color: $primary;
@@ -36,7 +40,7 @@ section.pokemon {
 
     h4 {
       font-weight: 500;
-      letter-spacing: 1.6px;
+      letter-spacing: 1.4px;
       font-size: 14px;
     }
 
@@ -46,9 +50,9 @@ section.pokemon {
         background-color: $backgroundFocus;
         font-size: 12px;
         border-radius: 36px;
-        width: 110px;
-        height: 10px;
-        padding: 10px 0;
+        height: 12px;
+        padding: 5px 15px;
+        margin: 5px;
         text-align: center;
       }
     }
@@ -58,20 +62,52 @@ section.pokemon {
     width: 37px;
     font-size: 14px;
     font-weight: 500;
+    letter-spacing: 1.4px;
+    margin: 0 10px;
 
   }
 
   .pokemon__description {
-    padding: 10px;
-    width: 443px;
-    height: 70px;
+    padding: 15px;
+    width: 447px;
+    height: 63px;
     overflow-y: scroll;
     background-color: $backgroundFocus;
     border-radius: 12px;
+    letter-spacing: 1.2px;
+    font-size: 12px;
 
     p {
-      letter-spacing: 1.2px;
-      color: $defaultFont;
+      margin: 12px 0;
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+
+}
+
+::-webkit-scrollbar-track {
+  background: #c2c2c2;
+  border-radius: 25px;
+
+}
+
+::-webkit-scrollbar-thumb {
+  background: #999999;
+  border-radius: 25px;
+  margin-right: 5px;
+}
+
+@media(max-width:900px) {
+  section.pokemon {
+    flex-direction: column;
+    height: auto;
+    width: auto;
+
+    .pokemon__description {
+      width: auto;
     }
   }
 }

@@ -416,6 +416,11 @@ textarea {
   /* 2 */
 }
 
+*{
+  padding: 0;
+  margin: 0;
+}
+
 /**
  * Remove most spacing between table cells.
  */
