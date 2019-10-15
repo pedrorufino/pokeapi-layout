@@ -11,7 +11,7 @@
     @extend %flex-center;
     letter-spacing: 1.25px;
     text-align: center;
-    height: 20px;
+    height: 30px;
     width: 100%;
     cursor: pointer;
     font-size: 10px;
@@ -19,6 +19,13 @@
 
     &:not(:last-child) {
       border-right: 1px solid $borderColor;
+    }
+
+    &:hover {
+      color: $primary;
+      font-weight: 700;
+      border-radius: 0 0 5px 0;
+      background: linear-gradient(180deg, $backgroundFocus 0%, $background 100%) 0% 0% no-repeat padding-box;
     }
   }
 }
