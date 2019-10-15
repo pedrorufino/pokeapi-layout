@@ -1,13 +1,12 @@
 <nav>
   <ul class="list">
-    <!-- Preciso passar o nome para a rota, mas concatenando com a rota atual -->
     <li class="list__item" *ngFor="let pokemon of pokelist" (click)="pokemonDetails(pokemon)"
-      routerLinkActive="list__item--highlight" 
-      >
+      routerLinkActive="list__item--highlight">
       {{ pokemon.name }}
+
     </li>
   </ul>
 </nav>
-<!-- <app-pokemon-details></app-pokemon-details> -->
 
-<router-outlet></router-outlet>
+
+<app-pokemon-details [pokemon]="singlePokemon" [pokemonImg]="singlePokemonImg"></app-pokemon-details>

@@ -1,3 +1,4 @@
+import { HttpService } from './../core/services/http.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit, Input } from '@angular/core';
 
@@ -9,16 +10,26 @@ import { Component, OnInit, Input } from '@angular/core';
 export class NavPokemonComponent implements OnInit {
   @Input() pokelist
   @Input() gen
+  public singlePokemon
+  public singlePokemonImg 
 
-
-  constructor(private router: Router, private route: ActivatedRoute) {
+  constructor(private router: Router, private route: ActivatedRoute, private service: HttpService) {
 
   }
 
-  // criar rota relativa a atual
-  // exportar para o componente details
+  /*
+  O retorno está correto
+  */
+
   pokemonDetails(pokemon) {
-    console.log(pokemon)
+
+    this.service.getPokemonData(pokemon).subscribe(dados => {
+      this.singlePokemon = dados
+    })
+
+    this.service.getPokemonMedia(pokemon).subscribe(dados => {
+      this.singlePokemonImg = dados
+    })
     this.router.navigate([`geracao/${this.gen}/`, pokemon.name], { relativeTo: this.route })
   }
 

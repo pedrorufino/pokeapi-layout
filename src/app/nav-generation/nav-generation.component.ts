@@ -25,6 +25,8 @@ export class NavGenerationComponent implements OnInit {
       this.getRandomPokemon(dados.pokemon_species)
     })
   }
+
+  
   getRandomPokemon(array) {
     let pokemons = []
     const randomPosition = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
@@ -33,6 +35,10 @@ export class NavGenerationComponent implements OnInit {
       pokemons[i] = array[randomPosition(1, array.length)];
     }
 
+    pokemons.forEach(el => {
+      el.urlImg = el.url.replace('-species', '')
+    })
+    console.log(pokemons)
     this.pokemonList = pokemons;
   }
 }

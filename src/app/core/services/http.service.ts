@@ -17,9 +17,12 @@ export class HttpService {
   }
 
 
-  getPokemonData(id){
-    let apiUrl = `https://pokeapi.co/api/v2/pokemon/id/`
-    return this.http.get<any>(`${apiUrl}`)
+  getPokemonData(pokemon){
+    return this.http.get<any>(`${pokemon.url}`)
+  }
+
+  getPokemonMedia(pokemon){
+    return this.http.get<any>(`${pokemon.urlImg}`)
   }
 
 
