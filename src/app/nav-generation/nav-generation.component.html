@@ -1,6 +1,6 @@
 <nav class="nav">
-  <h2 class="nav__gen" (click)="getGen(1)" routerLink="/geracao/1" routerLinkActive="nav__gen--highlight">Generation 1</h2>
-  <h2 class="nav__gen" (click)="getGen(2)" routerLink="/geracao/2" routerLinkActive="nav__gen--highlight">Generation 2</h2>
+  <h2 class="nav__gen" (click)="getGen(1)" routerLink="/generation-i" routerLinkActive="nav__gen--highlight">Generation 1</h2>
+  <h2 class="nav__gen" (click)="getGen(2)" routerLink="/generation-ii" routerLinkActive="nav__gen--highlight">Generation 2</h2>
 </nav>
 
-<app-nav-pokemon [gen]="gene" [pokelist]="pokemonList"></app-nav-pokemon>
+<app-nav-pokemon [pokelist]="pokemonList"></app-nav-pokemon>

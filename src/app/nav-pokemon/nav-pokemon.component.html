@@ -1,10 +1,10 @@
 <nav>
   <ul class="list">
     <li class="list__item" 
-      (click)="pokemonDetails(pokemon)"
-      *ngFor="let pokemon of pokelist" 
+      *ngFor="let pokemon of pokelist"
+      (click)="pokemonDetails(pokemon)" 
+      [routerLink]="['generation-i' , pokemon.name]" 
       routerLinkActive="list__item--highlight">
-
       {{ pokemon.name }}
     </li>
   </ul>

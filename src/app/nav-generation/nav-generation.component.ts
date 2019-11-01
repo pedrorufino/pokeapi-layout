@@ -1,7 +1,6 @@
 import { Component, OnInit, ɵConsole } from '@angular/core';
 import { HttpService } from './../core/services/http.service';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs/';
 
 @Component({
   selector: 'app-nav-generation',
@@ -10,9 +9,8 @@ import { Subscription } from 'rxjs/';
 })
 export class NavGenerationComponent implements OnInit {
 
-  public inscricao: Subscription
   public pokemonList
-  public gene
+
   constructor(private route: ActivatedRoute, private httpService: HttpService) { }
 
   ngOnInit() {
@@ -20,7 +18,6 @@ export class NavGenerationComponent implements OnInit {
   }
 
   getGen(gen: number = 1) {
-    this.gene = gen
     this.httpService.getGeneration(gen).subscribe(dados => {
       this.getRandomPokemon(dados.pokemon_species)
     })
@@ -38,6 +35,7 @@ export class NavGenerationComponent implements OnInit {
     pokemons.forEach(el => {
       el.urlImg = el.url.replace('-species', '')
     })
+
     console.log(pokemons)
     this.pokemonList = pokemons;
   }

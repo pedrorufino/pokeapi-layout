@@ -6,9 +6,10 @@
   <div class="pokemon__info">
     <h1>{{ pokemon.name }}</h1>
     <h3>{{ pokemon.names[1].name }}</h3>
-    <h4>{{ pokemon.genera[2].genus }}</h4>
+    <h4>{{ pokemon.genera[2].genus }}</h4> 
     <span class="pokemon__types">
       <h4 *ngFor="let type of pokemonImg.types">{{ type.type.name }}</h4>
+      {{ pokemon.generation.name }}
     </span>
   </div>
   <div class="pokemon__id">
