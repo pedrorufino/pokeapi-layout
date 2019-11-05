@@ -23,7 +23,6 @@ export class NavGenerationComponent implements OnInit {
     })
   }
 
-  
   getRandomPokemon(array) {
     let pokemons = []
     const randomPosition = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
