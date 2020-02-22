@@ -1,19 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpService } from './services/http.service';
+import { PokemonService } from './pokemon.service';
 
 @NgModule({
   declarations: [],
 
-  imports: [
-    CommonModule,
-    HttpClientModule
-  ],
-  exports: [
-    HttpClientModule
-  ],
-  providers: [HttpService
-  ]
+  imports: [CommonModule, HttpClientModule],
+  exports: [HttpClientModule],
+  providers: [PokemonService]
 })
-export class CoreModule { }
+export class CoreModule {}

@@ -1,0 +1,12 @@
+<nav>
+  <ul class="pokemon-list">
+    <li class="pokemon-list__item"
+      *ngFor="let pokemon of pokelist"
+      (click)="pokeService.getPokemonData(pokemon)"
+      [routerLink]="['generation-i' , pokemon.name]"
+      routerLinkActive="pokemon-list__item--highlight">
+      {{ pokemon.name }}
+    </li>
+  </ul>
+</nav>
+<!-- <app-pokemon-details [pokemon]="singlePokemon" [pokemonImg]="singlePokemonImg"></app-pokemon-details> -->

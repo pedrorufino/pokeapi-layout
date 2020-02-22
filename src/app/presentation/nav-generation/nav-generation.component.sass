@@ -1,0 +1,24 @@
+@import './../../../style/styles'
+
+.generation
+  max-width: 951px
+  width: 100%
+  height: 40px
+  @extend %flex-space
+  align-items: flex-start
+
+  &__title
+    font-size: 14px
+    font-weight: 500
+    padding: 10px 0
+    border-radius: 12px 12px 0px 0px
+    width: 100%
+    height: 100%
+    text-align: center
+    letter-spacing: 1.4px
+    cursor: pointer
+
+  &--highlight
+    color: $primary
+    font-weight: 800
+    background-color: $backgroundFocus

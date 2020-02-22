@@ -1,0 +1,19 @@
+<nav class="generation">
+  <h2
+    class="generation__title"
+    (click)="pokemonService.getGeneration(1)"
+    routerLink="/generation-i"
+    routerLinkActive="generation__title--highlight">
+      Generation I
+  </h2>
+
+  <h2
+    class="generation__title"
+    (click)="pokemonService.getGeneration(2)"
+    routerLink="/generation-ii"
+    routerLinkActive="generation__title--highlight">
+      Generation II
+  </h2>
+</nav>
+
+<!-- <app-nav-pokemon [pokelist]="pokemonList"></app-nav-pokemon> -->
